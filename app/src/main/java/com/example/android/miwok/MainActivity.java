@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // creat new intent for open (( PhrasesActivity
-                Intent phrasesIntent = new Intent(MainActivity.this,PhrasesActivity.class);
+                Intent phrasesIntent = new Intent(MainActivity.this,ContactListActivity.class);
                 // Start to new Activity
                 startActivity(phrasesIntent);
             }

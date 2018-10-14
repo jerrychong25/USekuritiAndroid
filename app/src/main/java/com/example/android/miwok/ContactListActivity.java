@@ -20,7 +20,7 @@ import java.util.HashMap;
 
 import static android.Manifest.permission.CALL_PHONE;
 
-public class PhrasesActivity extends AppCompatActivity {
+public class ContactListActivity extends AppCompatActivity {
 
     private static final int REQUEST_CALL = 1;
 
@@ -52,7 +52,7 @@ public class PhrasesActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapter, View view, int position,
                                     long id) {
-                Log.d("PhrasesActivity", "onCreate, position: " + position);
+                Log.d("ContactListActivity", "onCreate, position: " + position);
 //                Log.d("PhrasesActivity", "onCreate, listView.getItemAtPosition(position).toString(): " + listView.getItemAtPosition(position).toString());
 //                makePhoneCall(listView.getItemAtPosition(position).toString());
 
@@ -84,37 +84,37 @@ public class PhrasesActivity extends AppCompatActivity {
 
     private void makePhoneCall(String number) {
 
-        Log.d("PhrasesActivity", "makePhoneCall, number: " + number);
+        Log.d("ContactListActivity", "makePhoneCall, number: " + number);
 
         if (number.trim().length() > 0) {
 
-            Log.d("PhrasesActivity", "makePhoneCall 1");
+            Log.d("ContactListActivity", "makePhoneCall 1");
 
-            if (ContextCompat.checkSelfPermission(PhrasesActivity.this,
+            if (ContextCompat.checkSelfPermission(ContactListActivity.this,
                     CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
 
-                Log.d("PhrasesActivity", "makePhoneCall 2");
+                Log.d("ContactListActivity", "makePhoneCall 2");
 
-                ActivityCompat.requestPermissions(PhrasesActivity.this,
+                ActivityCompat.requestPermissions(ContactListActivity.this,
                         new String[]{CALL_PHONE}, REQUEST_CALL);
             } else {
 
-                Log.d("PhrasesActivity", "makePhoneCall 3");
+                Log.d("ContactListActivity", "makePhoneCall 3");
 
                 String dial = "tel:" + number;
                 startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
             }
 
         } else {
-            Log.d("PhrasesActivity", "makePhoneCall 4");
+            Log.d("ContactListActivity", "makePhoneCall 4");
 
-            Toast.makeText(PhrasesActivity.this, "Enter Phone Number", Toast.LENGTH_SHORT).show();
+            Toast.makeText(ContactListActivity.this, "Enter Phone Number", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void makeVoIPPhoneCall(String number) {
 
-        Log.d("PhrasesActivity", "makeVoIPPhoneCall, number: " + number);
+        Log.d("ContactListActivity", "makeVoIPPhoneCall, number: " + number);
 
         String api_key = "8cc2366a";
         String api_secret = "843470446027283ec73b528690edbcf5";

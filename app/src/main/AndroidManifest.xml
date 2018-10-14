@@ -33,10 +33,7 @@
         </intent-filter>
     </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".NumbersActivity" android:label="Numbers"></activity>
-    <activity android:name=".PhrasesActivity" />
-    <activity android:name=".FamilyActivity" />
-    <activity android:name=".ColorsActivity"></activity>
-</application>
+        <activity android:name=".ContactListActivity" />
+    </application>
 
 </manifest>

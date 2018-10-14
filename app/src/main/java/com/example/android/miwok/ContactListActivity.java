@@ -33,15 +33,9 @@ public class ContactListActivity extends AppCompatActivity {
         ArrayList<Word> words = new ArrayList<Word>();
 
         words.add(new Word("Encik Ali", "A-1-1", "0166581019"));
-//        words.add(new Word("Mr Sundram","A-2-1", "0166581019"));
-//        words.add(new Word("Encik Mohd","A-3-1", "0166581019"));
         words.add(new Word("Ms Jocelyn","B-1-1", "0175561642"));
-//        words.add(new Word("Mr Yong","B-2-1", "0175561642"));
-//        words.add(new Word("Ms Lim","B-3-1", "0175561642"));
         words.add(new Word("Cik Wahidah","C-1-1", "0132843154"));
-//        words.add(new Word("Mr Raj","C-2-1", "0132843154"));
-//        words.add(new Word("Mr Lee","C-3-1", "0132843154"));
-//        words.add(new Word("Mr Wong (US)","D-1-1", "011111111"));
+//        words.add(new Word("Mr Wong (US)","D-1-1", "011111111"));     // To Test VoIP Innovations
 
         WordAdapter adapter = new WordAdapter(this, words);
         final ListView listView = (ListView) findViewById(R.id.list);
@@ -61,6 +55,7 @@ public class ContactListActivity extends AppCompatActivity {
 
 //                HashMap<String, Object> obj = (HashMap<String, Object>) adapter.getItem(position);
 //                String name = (String) obj.get("name");
+
                 if( (position==0) )
                 {
                     makePhoneCall("0166581019");
@@ -73,10 +68,10 @@ public class ContactListActivity extends AppCompatActivity {
                 {
                     makePhoneCall("0132843154");
                 }
-                else if( (position==3) )
-                {
-                    makeVoIPPhoneCall("0166581019");
-                }
+//                else if( (position==3) )
+//                {
+//                    makeVoIPPhoneCall("0166581019");
+//                }
             }
 
         });

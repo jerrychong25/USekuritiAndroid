@@ -33,15 +33,14 @@ public class PhrasesActivity extends AppCompatActivity {
         ArrayList<Word> words = new ArrayList<Word>();
 
         words.add(new Word("Encik Ali", "A-1-1", "0166581019"));
-        words.add(new Word("Mr Sundram","A-2-1", "0166581019"));
-        words.add(new Word("Encik Mohd","A-3-1", "0166581019"));
-        words.add(new Word("Ms Jocelyn","A-4-1", "0166581019"));
-        words.add(new Word("Mr Yonng","A-5-1", "0166581019"));
-        words.add(new Word("Ms Lim","B-1-1", "0166581019"));
-        words.add(new Word("Cik Wahidah","B-2-1", "0166581019"));
-        words.add(new Word("Mr Raj","B-3-1", "0166581019"));
-        words.add(new Word("Mr Lee","B-4-1", "0166581019"));
-        words.add(new Word("Encik Kamarul","B-5-1", "0166581019"));
+//        words.add(new Word("Mr Sundram","A-2-1", "0166581019"));
+//        words.add(new Word("Encik Mohd","A-3-1", "0166581019"));
+        words.add(new Word("Ms Jocelyn","B-1-1", "0175561642"));
+//        words.add(new Word("Mr Yong","B-2-1", "0175561642"));
+//        words.add(new Word("Ms Lim","B-3-1", "0175561642"));
+        words.add(new Word("Cik Wahidah","C-1-1", "0132843154"));
+//        words.add(new Word("Mr Raj","C-2-1", "0132843154"));
+//        words.add(new Word("Mr Lee","C-3-1", "0132843154"));
 
         WordAdapter adapter = new WordAdapter(this, words);
         final ListView listView = (ListView) findViewById(R.id.list);
@@ -61,8 +60,19 @@ public class PhrasesActivity extends AppCompatActivity {
 
 //                HashMap<String, Object> obj = (HashMap<String, Object>) adapter.getItem(position);
 //                String name = (String) obj.get("name");
+                if( (position==0) )
+                {
+                    makePhoneCall("0166581019");
+                }
+                else if( (position==1) )
+                {
+                    makePhoneCall("0175561642");
+                }
+                else if( (position==2) )
+                {
+                    makePhoneCall("0132843154");
+                }
 
-                makePhoneCall("0166581019");
             }
 
         });
@@ -100,7 +110,7 @@ public class PhrasesActivity extends AppCompatActivity {
                 Log.d("PhrasesActivity", "makePhoneCall 3");
 
                 String dial = "tel:" + number;
-                startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse(dial)));
+                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse(dial)));
             }
 
         } else {

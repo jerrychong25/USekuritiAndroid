@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
                 if (user != null) {
                     // User is signed in
 //                    Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
-                    Toast.makeText(Login.this,"User have signed in!",Toast.LENGTH_LONG).show();
+//                    Toast.makeText(Login.this,"User have signed in!",Toast.LENGTH_LONG).show();
                 } else {
                     // User is signed out
 //                    Log.d(TAG, "onAuthStateChanged:signed_out");

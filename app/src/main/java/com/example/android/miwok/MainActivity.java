@@ -33,43 +33,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // find the view that show numbers category
-//        TextView numbers = (TextView)findViewById(R.id.numbers);
-//        TextView colors = (TextView)findViewById(R.id.colors);
-//        TextView family  = (TextView)findViewById(R.id.family);
-        TextView phrases = (TextView)findViewById(R.id.phrases);
+        TextView txContactList = (TextView)findViewById(R.id.contact_list);
+
         // Set a clickListener on that view
-
-//        numbers.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // creat new intent for open (( NumbersActivity
-//                Intent numbersIntent = new Intent(MainActivity.this,NumbersActivity.class);
-//                // Start to new Activity
-//                startActivity(numbersIntent);
-//            }
-//        });
-//
-//        colors.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // creat new intent for open (( ColorsActivity
-//                Intent colorsIntent = new Intent(MainActivity.this,ColorsActivity.class);
-//                // Start to new Activity
-//                startActivity(colorsIntent);
-//            }
-//        });
-//
-//        family.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // creat new intent for open (( FamilyActivity
-//                Intent familyIntent = new Intent(MainActivity.this,FamilyActivity.class);
-//                // Start to new Activity
-//                startActivity(familyIntent);
-//            }
-//        });
-
-        phrases.setOnClickListener(new View.OnClickListener() {
+        txContactList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // creat new intent for open (( PhrasesActivity

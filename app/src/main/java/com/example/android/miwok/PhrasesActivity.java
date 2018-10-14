@@ -41,6 +41,7 @@ public class PhrasesActivity extends AppCompatActivity {
         words.add(new Word("Cik Wahidah","C-1-1", "0132843154"));
 //        words.add(new Word("Mr Raj","C-2-1", "0132843154"));
 //        words.add(new Word("Mr Lee","C-3-1", "0132843154"));
+//        words.add(new Word("Mr Wong (US)","D-1-1", "011111111"));
 
         WordAdapter adapter = new WordAdapter(this, words);
         final ListView listView = (ListView) findViewById(R.id.list);
@@ -72,22 +73,13 @@ public class PhrasesActivity extends AppCompatActivity {
                 {
                     makePhoneCall("0132843154");
                 }
-
+                else if( (position==3) )
+                {
+                    makeVoIPPhoneCall("0166581019");
+                }
             }
 
         });
-
-//        TextView unit_A_1_1 = (TextView)findViewById(R.id.phrases);
-//
-//        unit_A_1_1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                // creat new intent for open (( PhrasesActivity
-//                Intent phrasesIntent = new Intent(MainActivity.this,PhrasesActivity.class);
-//                // Start to new Activity
-//                startActivity(phrasesIntent);
-//            }
-//        });
     }
 
     private void makePhoneCall(String number) {
@@ -120,14 +112,21 @@ public class PhrasesActivity extends AppCompatActivity {
         }
     }
 
-//    @Override
-//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-//        if (requestCode == REQUEST_CALL) {
-//            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                makePhoneCall();
-//            } else {
-//                Toast.makeText(this, "Permission DENIED", Toast.LENGTH_SHORT).show();
-//            }
-//        }
-//    }
+    private void makeVoIPPhoneCall(String number) {
+
+        Log.d("PhrasesActivity", "makeVoIPPhoneCall, number: " + number);
+
+        String api_key = "8cc2366a";
+        String api_secret = "843470446027283ec73b528690edbcf5";
+
+//        // Source: https://stackoverflow.com/questions/52458591/apidaze-rest-api-http-post-call-in-android-java
+//        HttpPost httpPost = new HttpPost("https://api.apidaze.io/" + api_key + "/sms/send");
+//
+//        String json = "{"api_secret":" + api_secret + "}";
+//        StringEntity entity = new StringEntity(json);
+//        httpPost.setEntity(entity);
+//        httpPost.setHeader("Content-type", "application/x-www-form-urlencoded");
+//
+//        CloseableHttpResponse response = client.execute(httpPost);
+    }
 }

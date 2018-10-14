@@ -1,4 +1,4 @@
-package com.example.android.miwok;
+package com.example.android.usekuriti;
 
 // Import Android API
 import android.content.Intent;
